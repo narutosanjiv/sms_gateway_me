@@ -1,5 +1,9 @@
-require "sms_gateway_me/version"
-require "sms_gateway_me/message"
+require 'faraday'
+require 'sms_gateway_me/version'
+require 'sms_gateway_me/config'
+require 'sms_gateway_me/base'
+require 'sms_gateway_me/message'
+require 'sms_gateway_me/contact'
 
 module SmsGatewayMe
   # Your code goes here...
@@ -13,7 +17,7 @@ module SmsGatewayMe
   end
 
   def self.setup
-    yield self
+    yield config
   end
 
   class Configuration

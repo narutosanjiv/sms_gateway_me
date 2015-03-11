@@ -15,4 +15,5 @@ class TestSmsGatewayMe < Minitest::Test
     assert SmsGatewayMe.respond_to?(:setup), true
   end
 
+  
 end

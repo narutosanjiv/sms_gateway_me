@@ -3,7 +3,7 @@ class NumberMissing < StandardError
 end
 
 module SmsGatewayMe
-  class Contact
+  class Contact < SmsGatewayMe::Base
     include SmsGatewayMe::Config 
         
     CONTACT_URL = "http://smsgateway.me/api/v3/contacts"

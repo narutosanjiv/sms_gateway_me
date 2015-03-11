@@ -8,12 +8,12 @@ module SmsGatewayMe
 
     attr_accessor :number
     MSG_URL = "http://smsgateway.me/api/v3/messages"
-    def initialize(number)
+    def initialize(number=nil)
       @number = number
     end
 
     def send(message)
-      raise NumberMissing, "Please provide mobile number for sending msg." if number.blank
+      raise NumberMissing, "Please provide mobile number for sending msg." if number.empty?
       url = MSG_URL + "/send"
       opts = {email: email, password: password, device: device_id, 
               number: number, message: message}
